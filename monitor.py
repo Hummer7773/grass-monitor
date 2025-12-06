@@ -1,5 +1,4 @@
 import os
-import time
 import requests
 
 TOKEN = os.environ['BOT_TOKEN']
@@ -10,14 +9,5 @@ def send_alert(msg):
     data = {'chat_id': CHAT_ID, 'text': msg}
     requests.post(url, data=data)
 
-while True:
-    result = os.system("pgrep -f grass")
-    if result != 0:
-        send_alert("🚨 Grass-нода не найдена")
-    time.sleep(3600)
-if __name__ == "__main__":
-    while True:
-        result = os.system("pgrep -f grass")
-        if result != 0:
-            send_alert("🚨 Grass-нода не найдена")
-        time.sleep(3600)
+# Пример однократного запуска
+send_alert("✅ Скрипт запущен через GitHub Actions")
