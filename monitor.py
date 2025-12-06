@@ -15,3 +15,9 @@ while True:
     if result != 0:
         send_alert("🚨 Grass-нода не найдена")
     time.sleep(3600)
+if __name__ == "__main__":
+    while True:
+        result = os.system("pgrep -f grass")
+        if result != 0:
+            send_alert("🚨 Grass-нода не найдена")
+        time.sleep(3600)
